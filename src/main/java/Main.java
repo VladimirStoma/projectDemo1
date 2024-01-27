@@ -1,22 +1,21 @@
-import org.jdbi.v3.core.Handle;
-import org.jdbi.v3.core.Jdbi;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
+import DAO.UserDao;
+import DAO.UserDaoImpl;
+import service.UserService;
+
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        Jdbi jdbi = Jdbi.create("jdbc:postgresql://localhost:5432/postgres", "postgres", "Mandarin");
-        jdbi.useTransaction((Handle handle) -> {
-            handle
-                    .createUpdate("INSERT INTO users (firstName, lastName) VALUES (:firstName, :lastName)")
-                    .bind("firstName", "Сергей")
-                    .bind("lastName", "Серегеев")
-                    .execute();
-        });
+        UserDao userDao = new UserDaoImpl();
+        UserService userService = new UserService(userDao);
+      // userService.createTable();
+        // userService.createUser("коля","Коля123","12345","22.02.1982",
+           //    "89168484856","dagadgag");
+       // userService.updateUser("Жора","Вася123","123454321","22.02.1982",
+                //     "89168484856","dagadgag",1);
+      //  userService.deleteUserbyid(1);
+        userService.getUserById(2);
     }
 }
-
-
