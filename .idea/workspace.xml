@@ -22,17 +22,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="main" />
-      </list>
-    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2af4f653-9f7c-4038-926a-d9c6df3edf94/console.sql" root0="FORCE_HIGHLIGHTING" />
@@ -118,7 +111,7 @@
       <updated>1705426341218</updated>
       <workItem from="1705426343123" duration="656000" />
       <workItem from="1705427504243" duration="15841000" />
-      <workItem from="1705579114446" duration="68679000" />
+      <workItem from="1705579114446" duration="70138000" />
     </task>
     <task id="LOCAL-00001" summary="таблица users">
       <created>1705602546441</created>
@@ -148,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706345082486</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="таблица users">
+      <created>1706347373936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706347373937</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
