@@ -1,20 +1,25 @@
 package DAO;
 
 import domain.User;
+import dto.request.CreateUserRequest;
+import dto.request.DeleteUserByPasswordRequest;
+import dto.request.UpdateUserRequest;
 
-import java.util.Date;
+import java.sql.SQLException;
 
 //методы для взаимодействия с БД (например, создание таблицы)
 public interface UserDao {
     void createUsersTable();
 
-    void createUser(String name, String login, String password, String dataofbirth, String phone, String email);
+    long  createUser(CreateUserRequest createUserRequest);
 
-    void updateUserbyid(String name, String login,String password, String dataofbirth, String phone, String email, long id);
+    void updateUserByid(UpdateUserRequest updateUserRequest);
 
-    void  deleteUserbyid(long id);
+    void  deleteUserByid(long id);
 
-    User getUserById(long id);
+    User findUserById(long id);
+
+    boolean deleteUserByPassword(DeleteUserByPasswordRequest deleteUserByPasswordRequest) throws SQLException;
 
 
 }

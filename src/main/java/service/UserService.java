@@ -1,9 +1,12 @@
 package service;
 
 import DAO.UserDao;
-import domain.User;
+import dto.request.CreateUserRequest;
+import dto.request.DeleteUserByPasswordRequest;
+import dto.request.UpdateUserRequest;
+import dto.response.UserResponse;
 
-import java.util.Date;
+import java.sql.SQLException;
 
 public class UserService {
 
@@ -16,18 +19,23 @@ public class UserService {
     public void createTable() {
         userDao.createUsersTable();
     }
-    public void createUser(String name, String login, String password, String dataofbirth, String phone, String email){
-        userDao.createUser(name, login, password, dataofbirth, phone, email);
+    public void createUser(CreateUserRequest createUserRequest){
+        userDao.createUser(createUserRequest);
     }
 
-    public void deleteUserbyid(long id) {
-        userDao.deleteUserbyid(id);
+    public void deleteUserByid(long id) {
+        userDao.deleteUserByid(id);
     }
-    public void updateUser(String name, String login, String password, String dataofbirth, String phone, String email, long id){
-        userDao.updateUserbyid(name, login, password, dataofbirth, phone, email, id);
+    public void updateUser(UpdateUserRequest updateUserRequest){
+        userDao.updateUserByid(updateUserRequest);
     }
-   public User getUserById(long id){
-        return userDao.getUserById(id);
+   public UserResponse getUserById(long id){
+        final var user = userDao.findUserById(id);
+        return new UserResponse(user);
+   }
+   public boolean deleteUserByPassword(DeleteUserByPasswordRequest deleteUserByPasswordRequest) throws SQLException {
+        userDao.deleteUserByPassword(deleteUserByPasswordRequest);
+       return true;
    }
 
 
